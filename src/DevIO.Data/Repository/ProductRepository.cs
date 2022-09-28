@@ -16,7 +16,7 @@ namespace DevIO.Data.Repository
                 .FirstOrDefaultAsync(product => product.Id == id);
         }
 
-        public async Task<IEnumerable<Product>> GetProductsSupplier()
+        public async Task<IEnumerable<Product>> GetProductsSuppliers()
         {
             return await Context.Products.AsNoTracking()
                 .Include(supplier => supplier.Supplier)

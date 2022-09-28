@@ -6,12 +6,6 @@ using DevIO.Business.Models;
 
 namespace DevIO.App.Controllers
 {
-    public abstract class BaseController : Controller
-    {
-
-    }
-
-
     public class SupplierController : BaseController
     {
         private readonly ISupplierRepository _supplierRepository;

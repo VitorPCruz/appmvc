@@ -21,7 +21,7 @@ public class ProductViewModel
         MinimumLength = 2)]
     public string Description { get; set; }
 
-    // public IFormFile ImageUpload { get; set; }
+    public IFormFile ImageUpload { get; set; }
 
     public string Image { get; set; }
 
@@ -35,4 +35,6 @@ public class ProductViewModel
     public bool Active { get; set; }
     
     public SupplierViewModel Supplier { get; set; }
+
+    public IEnumerable<SupplierViewModel> Suppliers { get; set; }
 }
