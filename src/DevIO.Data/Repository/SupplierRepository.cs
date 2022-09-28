@@ -16,7 +16,7 @@ namespace DevIO.Data.Repository
                 .FirstOrDefaultAsync(supplier => supplier.Id == supplierId);
         }
 
-        public async Task<Supplier> GetSupplierProductsAdress(Guid supplierId)
+        public async Task<Supplier> GetSupplierProductsAddress(Guid supplierId)
         {
             return await Context.Suppliers.AsNoTracking()
                 .Include(supplier => supplier.Products)

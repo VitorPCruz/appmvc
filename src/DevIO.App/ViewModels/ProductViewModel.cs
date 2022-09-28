@@ -21,7 +21,7 @@ public class ProductViewModel
         MinimumLength = 2)]
     public string Description { get; set; }
 
-    public IFormFile ImageUpload { get; set; }
+    // public IFormFile ImageUpload { get; set; }
 
     public string Image { get; set; }
 
