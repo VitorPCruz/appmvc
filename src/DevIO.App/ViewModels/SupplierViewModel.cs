@@ -8,10 +8,6 @@ public class SupplierViewModel
     [Key]
     public Guid Id { get; set; }
 
-    [DisplayName("Supplier")]
-    [Required(ErrorMessage = "The field '{0}' is required")]
-    public Guid SupplierId { get; set; }
-
     [Required(ErrorMessage = "The field '{0}' is required")]
     [StringLength(100,
         ErrorMessage = "The field '{0}' must be between {2} and {1} characters",

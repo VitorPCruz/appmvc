@@ -16,7 +16,7 @@ namespace DevIO.App.Controllers
         public ProductController(IProductRepository productRepository, ISupplierRepository supplierRepository, IMapper mapper)
         {
             _productRepository = productRepository;
-            _supplierRepository = supplierRepository;
+            _supplierRepository = supplierRepository; 
             _mapper = mapper;
         }
 
@@ -49,7 +49,7 @@ namespace DevIO.App.Controllers
             productViewModel = await PopulateSuppliers(productViewModel);
 
             if (!ModelState.IsValid)
-                return NotFound();
+                return View(productViewModel);
 
             await _productRepository.AddEntity(_mapper.Map<Product>(productViewModel));
 
