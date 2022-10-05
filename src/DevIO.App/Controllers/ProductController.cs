@@ -20,7 +20,6 @@ namespace DevIO.App.Controllers
             _mapper = mapper;
         }
 
-
         public async Task<IActionResult> Index()
         {
               return View(_mapper.Map<IEnumerable<ProductViewModel>>(await _productRepository.GetProductsSuppliers()));

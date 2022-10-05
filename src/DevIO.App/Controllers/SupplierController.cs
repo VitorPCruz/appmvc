@@ -43,7 +43,7 @@ namespace DevIO.App.Controllers
         public async Task<IActionResult> Create(SupplierViewModel supplierViewModel)
         {
             if (!ModelState.IsValid) 
-                return View(supplierViewModel);
+                return View(supplierViewModel.Products);
 
             var supplier = _mapper.Map<Supplier>(supplierViewModel);
             await _supplierRepository.AddEntity(supplier);
@@ -100,7 +100,7 @@ namespace DevIO.App.Controllers
 
             await _supplierRepository.RemoveEntity(id);
 
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         private async Task<SupplierViewModel> GetSupplierAddress(Guid supplierId)

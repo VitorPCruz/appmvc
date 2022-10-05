@@ -28,5 +28,5 @@ public class SupplierViewModel
     [DisplayName("Active?")]
     public bool Active { get; set; }
 
-    public IEnumerable<ProductViewModel> Products { get; set; }
+    public IEnumerable<ProductViewModel>? Products { get; set; }
 }

@@ -23,5 +23,16 @@ namespace DevIO.Data.Repository
                 .Include(supplier => supplier.Address)
                 .FirstOrDefaultAsync(supplier => supplier.Id == supplierId);
         }
+
+        public async Task RemoveSupplier(Guid id)
+        {
+           var supplier = await Context.Suppliers.AsNoTracking()
+                .Include(supplier => supplier.Address)
+                .Include(supplier => supplier.Products)
+                .FirstOrDefaultAsync(supplier => supplier.Id == id);
+
+            DbSet.Remove(supplier);
+            await SaveChanges();
+        }
     }
 }

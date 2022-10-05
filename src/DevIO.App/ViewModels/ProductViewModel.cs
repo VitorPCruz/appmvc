@@ -13,18 +13,14 @@ public class ProductViewModel
     public Guid SupplierId { get; set; }
 
     [Required(ErrorMessage = "The field '{0}' is required")]
-    [StringLength(200, 
-        ErrorMessage = "The field '{0}' must be between {2} and {1} characters", 
-        MinimumLength = 2)]
+    [StringLength(200, ErrorMessage = "The field '{0}' must be between {2} and {1} characters", MinimumLength = 2)]
     public string Name { get; set; }
 
-
     [Required(ErrorMessage = "The field '{0}' is required")]
-    [StringLength(1000,
-        ErrorMessage = "The field '{0}' must be between {2} and {1} characters",
-        MinimumLength = 2)]
+    [StringLength(1000, ErrorMessage = "The field '{0}' must be between {2} and {1} characters", MinimumLength = 2)]
     public string Description { get; set; }
 
+    [DisplayName("Product Image")]
     public IFormFile ImageUpload { get; set; }
 
     public string Image { get; set; }
